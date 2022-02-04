@@ -11,7 +11,7 @@ namespace objFile_Render
     {
         public static float[,] ReadXyz()
         {
-            string path = @"C:\Users\CTI\Desktop\scanControlTest\test2.asc";
+            string path = @"C:\Users\soyen\Desktop\2022_winter(M)\Personal\github\2022_KAIS_3Drendering\3d_rendering\test3.asc";
             string[] textValue = File.ReadAllLines(path);
             float[, ] xyz = new float[textValue.Length, 3];
            
@@ -37,9 +37,9 @@ namespace objFile_Render
 
         public static int[,] ReadRgb()
         {
-            string path = @"C:\Users\CTI\Desktop\scanControlTest\test2.asc";
+            string path = @"C:\Users\soyen\Desktop\2022_winter(M)\Personal\github\2022_KAIS_3Drendering\3d_rendering\test3.asc";
             string[] textValue = File.ReadAllLines(path);
-            float[,] rgb = new float[textValue.Length, 3];
+            int[,] rgb = new int[textValue.Length, 3];
             
             for (int i = 0; i < textValue.Length; i++)
             {
@@ -50,7 +50,7 @@ namespace objFile_Render
                     {
                         if (j > 2)
                         {
-                            rgb[i, j - 3] = float.Parse(SpaceSplit[j]);
+                            rgb[i, j - 3] = int.Parse(SpaceSplit[j]);
                         }
                     }
                 }

@@ -5,7 +5,7 @@ using OpenTK.Mathematics;
 
 namespace OpenTK.WinForms.TestForm
 {
-	public partial class Form1 : Form
+    public partial class Form1 : Form
 	{
         private Timer _timer = null!;
         private float _angle = 0.0f;
@@ -82,7 +82,7 @@ namespace OpenTK.WinForms.TestForm
             GL.Enable(EnableCap.DepthTest);
             GL.PointSize(10.0f);
 
-            Matrix4 lookat = Matrix4.LookAt(20, 20, 90, 0, 0, 85, 0,1,3);
+            Matrix4 lookat = Matrix4.LookAt(0, 5, 5, 0, 0, 0, 0,1,0);
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadMatrix(ref lookat);
 
