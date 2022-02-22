@@ -33,6 +33,8 @@ namespace OpenTK.WinForms.TestForm
         private float _zy = 5.0f;
         private float _zz = 5.0f;
 
+        public double lin;
+
 
         public Form1()
 		{
@@ -161,6 +163,14 @@ namespace OpenTK.WinForms.TestForm
 
             GL.End();
 
+            //test용
+            var p1 = new double[] {3.0, 5.0, -1.0};
+            var p2 = new double[] {2.0, 1.0, 7.0 };
+            var p3 = new double[] {5.0, 7.0, 8.0 };
+            //TEST : 6.4454
+
+            lin = Point.Point.PointToLine(p1, p2, p3);
+
             glControl.SwapBuffers();
         }
 
@@ -188,7 +198,7 @@ namespace OpenTK.WinForms.TestForm
             glControl.Resize += glControl_Resize;
             glControl.Paint += glControl_Paint;
             Z_textBox.Clear();
-            Z_textBox.Text = "F";
+            Z_textBox.Text = lin.ToString();
 
             if (e.KeyCode == Keys.A)
             {
